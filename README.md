@@ -6,7 +6,16 @@ An offline comedy demo: swipe past fictional bills, spend a fake fortune, and ov
 
 Double-click `index.html` and open it in desktop Chrome. It works with Wi-Fi off, directly from `file://`. No install, build, server, account, or API key is needed.
 
-Choose **I'm rich** to start with a fake ₱1,000,000, or **I'm broke** to open the Post tab. The display name defaults to You. The bottom navigation has Swipe, Post, Leaderboard, and Me.
+Choose **I'm rich** or **I'm broke**, then **Make my entrance**. Pick a title and display name, then enter the app. Rich starts with a fake ₱1,000,000; Broke opens Post. The display name defaults to You. Navigation is a sidebar on desktop and a bottom bar on mobile.
+
+## Interactive onboarding and refreshed UI
+
+- A draggable practice bill with Skip preview, Pay preview, and Try again. Practice never spends money, changes the real feed, or creates receipts.
+- Two-step role and persona selection. Going back preserves your name and title.
+- A live membership card updates as you type your name and choose one of five titles.
+- Matching theSVG outline/duotone icons, stronger bill cards, a dark wallet panel, and a leaderboard target showing your distance from Don Sergio.
+- Existing users can see onboarding with **Me → Reset demo**; this intentionally clears local demo progress after confirmation.
+- SVG artwork is embedded in the HTML. No network, library installation, or font downloads are required. Attribution is in `THIRD_PARTY_NOTICES.md` and inside the HTML.
 
 **Demo only — no real money moved.** All profiles and payments are fictional.
 
@@ -33,7 +42,7 @@ Configuration reference: https://vercel.com/docs/builds/configure-a-build
 
 ## 60-second demo
 
-1. Start fresh with **I'm rich**, name You, and Old Money.
+1. Start fresh with **I'm rich** → **Make my entrance**, name You, and Old Money → **Start swiping**.
 2. Skip Mark's ₱689 bill.
 3. Pay Jhoanna's ₱6,420 Meralco bill. Show the simulated receipt, then Keep swiping.
 4. Optionally open Post, enter a fictional name, amount, and short description. Select Make it irresistible, then Post to the feed. It appears first; **skip this custom bill** to preserve the demo arithmetic.
@@ -73,3 +82,5 @@ The suite passed on November 6, 2026: offline launch; onboarding and reload; mou
 ## Design reference
 
 Used `Leonxlnx/taste-skill`, cloned into `../taste-skill`, for typography, spacing, restrained color, and interaction guidance. The supplied PRD's single-file/offline constraints, compact app layout, seed data, and explicit design system take precedence over the skill's marketing-page templates and asset pipeline. Its marketing-site checkers were not used; app-specific offline acceptance checks were used instead.
+
+The UI refresh additionally passed practice isolation, live name/title preview, back-navigation draft retention, onboarding validation, and responsive layout checks. Screenshot review covered desktop and mobile light/dark layouts. Icons are sourced from the cloned `glincker/thesvg` UI collection (MIT), using only selected inline assets.
