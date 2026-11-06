@@ -6,7 +6,7 @@ An offline comedy demo: swipe past fictional bills, spend a fake fortune, and ov
 
 Double-click `index.html` and open it in desktop Chrome. It works with Wi-Fi off, directly from `file://`. No install, build, server, account, or API key is needed.
 
-Choose **I'm rich** or **I'm broke**, then **Make my entrance**. Pick a title and display name, then enter the app. Rich starts with a fake ₱1,000,000; Broke opens Post. The display name defaults to You. Navigation is a sidebar on desktop and a bottom bar on mobile.
+Choose **I'm rich** or **I'm broke**, then **Keep swiping**. Pick a title and display name, then enter the app. Rich starts with a fake ₱1,000,000; Broke opens Post. The display name defaults to You. Navigation is a sidebar on desktop and a bottom bar on mobile.
 
 ## Interactive onboarding and refreshed UI
 
@@ -42,7 +42,7 @@ Configuration reference: https://vercel.com/docs/builds/configure-a-build
 
 ## 60-second demo
 
-1. Start fresh with **I'm rich** → **Make my entrance**, name You, and Old Money → **Start swiping**.
+1. Start fresh with **I'm rich** → **Keep swiping**, name You, and Old Money → **See my rundown** → **Okay, I’m thrilled and ready to pay all**.
 2. Skip Mark's ₱689 bill.
 3. Pay Jhoanna's ₱6,420 Meralco bill. Show the simulated receipt, then Keep swiping.
 4. Optionally open Post, enter a fictional name, amount, and short description. Select Make it irresistible, then Post to the feed. It appears first; **skip this custom bill** to preserve the demo arithmetic.
@@ -84,3 +84,14 @@ The suite passed on November 6, 2026: offline launch; onboarding and reload; mou
 Used `Leonxlnx/taste-skill`, cloned into `../taste-skill`, for typography, spacing, restrained color, and interaction guidance. The supplied PRD's single-file/offline constraints, compact app layout, seed data, and explicit design system take precedence over the skill's marketing-page templates and asset pipeline. Its marketing-site checkers were not used; app-specific offline acceptance checks were used instead.
 
 The UI refresh additionally passed practice isolation, live name/title preview, back-navigation draft retention, onboarding validation, and responsive layout checks. Screenshot review covered desktop and mobile light/dark layouts. Icons are sourced from the cloned `glincker/thesvg` UI collection (MIT), using only selected inline assets.
+
+
+## Laugh-to-pay: the pitch
+
+Broke users write a witty plea in **Post → Your pitch. Make them laugh.** Rich users try not to smile. Open **Swipe → Try laugh-to-pay → Enable camera & auto-pay** and allow camera access. Start with a straight face, then read a pitch and hold a smile. A sustained high smile estimate pays the current bill once. After the receipt, press **Arm this bill** to play again.
+
+Smile detection is a demo proxy for laughter, not proof that someone laughed. It can make mistakes. Only simulated money moves. **That got me. Pay this bill** is the manual fallback. Super Pay stays manual. The rundown's final button opens the feed; it never pays all bills automatically.
+
+Camera processing runs entirely in your browser using bundled face-api.js 0.22.2 and tiny face/expression models. No images or video are recorded, saved, or uploaded; no microphone or face identification is used. Camera stops on leaving Swipe or hiding the page. HTTPS Chrome is recommended for the live demo; local-file camera support depends on browser permissions. Denied/unavailable cameras leave manual controls usable.
+
+Verification: existing offline suite passes; actual model loading and blank-frame inference pass offline; controlled classifier-score tests cover sustained-smile single payment, initial-smile calibration, multiple-face blocking, receipt creation, re-arm requirement, camera stop, denial fallback, and manual pay. Physical-camera smile accuracy still needs a quick check on the presenting laptop.
